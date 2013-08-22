@@ -14,16 +14,20 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.santiavenda.rest.domain.CountryInformation;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 
 /**
  * @author santiago
  * 
  */
 @Path("/countries")
+@Api(value = "/countries")
 public class CountryResource {
 
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@ApiOperation(value = "Find countries information", notes = "More notes about this method", response = CountryInformation.class, responseContainer="list")
 	public Response getCountries() {
 		List<CountryInformation> countries = getCountryInformation();
 		GenericEntity<List<CountryInformation>> entity = new GenericEntity<List<CountryInformation>>(

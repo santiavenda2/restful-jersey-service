@@ -1,2 +1,5 @@
+== MAVEN ==
 - hacer un proyecto web 
     mvn eclipse:eclipse -Dwtpversion=2.0
+- Download sources
+    mvn eclipse:eclipse -DdownloadSources=true 
